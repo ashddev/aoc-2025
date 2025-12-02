@@ -22,4 +22,5 @@ My solutions to the Advent of Code 2025 challenges :)
 
 ## To Do
 
-- [ ] Build CLI tool to run solutions
+- [ ] Build CLI to run solutions
+
