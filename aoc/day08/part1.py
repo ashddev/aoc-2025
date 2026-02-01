@@ -6,6 +6,7 @@ f = open("./input.txt")
 inputtxt = f.read()
 f.close()
 
+
 class ClosestPoints:
     def __init__(self, k: int):
         self.K = k
@@ -25,11 +26,15 @@ class ClosestPoints:
     def get(self):
         return sorted([(-d, x) for (d, x) in self.heap])
 
+
 def distance(p: list[int], q: list[int]) -> float:
     return math.sqrt(sum([math.pow(q_i - p_i, 2) for p_i, q_i in zip(p, q)]))
 
+
 def solve(input: str):
-    transform: Callable[[str], list[int]] = lambda p: list(map(int, p.strip().split(",")))
+    transform: Callable[[str], list[int]] = lambda p: list(
+        map(int, p.strip().split(","))
+    )
     points = [transform(p) for p in input.strip().split("\n")]
     cp = ClosestPoints(10)
     n = len(points)
